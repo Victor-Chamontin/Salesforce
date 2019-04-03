@@ -1,4 +1,5 @@
 {
     "html.suggest.angular1": false,
-    "html.suggest.ionic": false
+    "html.suggest.ionic": false,
+    "eslint.nodePath": "c:\\Users\\victor.chamontin\\.vscode\\extensions\\salesforce.salesforcedx-vscode-lwc-45.8.0\\node_modules"
 }
