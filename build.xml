@@ -1,4 +1,4 @@
-<project name="Sample usage of Salesforce Ant tasks" default="test" basedir="." xmlns:sf="antlib:com.salesforce">
+<project name="TestCedric" default="test" basedir="." xmlns:sf="antlib:com.salesforce">
 
     <property file="build.properties"/>
     <property environment="env"/>
