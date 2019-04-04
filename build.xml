@@ -1,4 +1,4 @@
-<project name="Sample usage of Salesforce Ant tasks" default="usage" basedir="." xmlns:sf="antlib:com.salesforce">
+<project name="Sample usage of Salesforce Ant tasks" default="test" basedir="." xmlns:sf="antlib:com.salesforce">
 
     <property file="build.properties"/>
     <property environment="env"/>
@@ -13,7 +13,7 @@
 
     <taskdef resource="com/salesforce/antlib.xml" uri="antlib:com.salesforce">
         <classpath>
-            <pathelement location="..\ant-salesforce.jar" />        	
+            <pathelement location="../ant-salesforce.jar" />          
         </classpath>
     </taskdef>
 
@@ -24,7 +24,7 @@
       <!-- Retrieve the contents into another directory -->
       <sf:retrieve username="${sf.username}" password="${sf.password}"
         sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}"
-        unpackaged="manifest/package.xml" retrieveTarget="retrieveSource" />
+        unpackaged="retrieve/package.xml" retrieveTarget="force-app/main/default/" />
       </target>
 
     <!-- Deploy the unpackaged set of metadata retrieved with retrieveUnpackaged and run tests -->
