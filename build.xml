@@ -24,7 +24,7 @@
       <!-- Retrieve the contents into another directory -->
       <sf:retrieve username="${sf.username}" password="${sf.password}"
         sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}"
-        unpackaged="retrieve/package.xml" retrieveTarget="force-app/main/default/" />
+        unpackaged="manifest/package.xml" retrieveTarget="force-app/main/default/" />
       </target>
 
     <!-- Deploy the unpackaged set of metadata retrieved with retrieveUnpackaged and run tests -->
