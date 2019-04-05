@@ -49,6 +49,7 @@
         </git>
     </target>
 
+    
     <macrodef name="git">
       <attribute name="command" />
       <attribute name="dir" default="${gt.Directory}" />
