@@ -44,7 +44,7 @@
         </git>
         <git command="push" dir="./">
           <args>
-            <arg value="origin master" />
+            <arg value="origin" />
           </args>
         </git>
     </target>
