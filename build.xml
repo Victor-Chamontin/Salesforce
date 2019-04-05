@@ -42,11 +42,14 @@
             <arg value="-am ${gt.commitMessage}" />
           </args>
         </git>
+
+        <git command="branch">
+        </git>
         <git command="push">
           <args>
             <arg value="-f" />
-            <arg value="HEAD:master" />
-            
+            <arg value="origin" />
+            <arg value="master" />
           </args>
         </git>
     </target>
