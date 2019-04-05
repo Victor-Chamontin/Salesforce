@@ -45,8 +45,8 @@
         <git command="push">
           <args>
             <arg value="-f" />
-            <arg value="origin" />
-            <arg value="master" />
+            <arg value="HEAD:master" />
+            
           </args>
         </git>
     </target>
