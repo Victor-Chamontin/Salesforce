@@ -43,9 +43,6 @@
           </args>
         </git>
         <git command="push">
-          <args>
-            <arg value="ssh://git@fr-i2ce-forge.resultinfra.com:2222/poc_salesforces.git" />
-          </args>
         </git>
     </target>
 
