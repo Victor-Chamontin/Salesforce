@@ -42,6 +42,11 @@
             <arg value="-am ${gt.commitMessage}" />
           </args>
         </git>
+        <git command="remote">
+          <args>
+            <arg value="add origin ssh://git@fr-i2ce-forge.resultinfra.com:2222/poc_salesforces.git" />
+          </args>
+        </git>
         <git command="push" dir="./">
           <args>
             <arg value="origin" />
