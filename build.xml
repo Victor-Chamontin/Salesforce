@@ -55,7 +55,7 @@
       <attribute name="dir" default="${gt.Directory}" />
       <element name="args" optional="true" />
       <sequential>
-        <echo message="git @{command}" />
+        <echo message="git @{command} @{value}" />
         <exec executable="git" dir="./">
           <arg value="@{command}" />
           <args/>
