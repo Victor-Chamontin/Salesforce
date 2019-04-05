@@ -17,13 +17,13 @@
         </classpath>
     </taskdef>
 
-
-
     <!-- Deploy the unpackaged set of metadata retrieved with retrieveUnpackaged and run tests -->
     <target name="deploy">
       <sf:deploy username="${sf.username}" password="${sf.password}"
         sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}"
-        deployRoot="force-app/main/default/" rollbackOnError="true" />
+        deployRoot="force-app/main/default/" testLevel="RunSpecifiedTests" rollbackOnError="true">
+        <runTest>SampleDeployClass</runTest> 
+      </sf:deploy>
 
     </target>
 
@@ -35,12 +35,5 @@
       <sf:retrieve username="${sf.username}" password="${sf.password}"
         sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}"
         unpackaged="manifest/package.xml" retrieveTarget="force-app/main/default/" />
-    </target>
-
-    <!-- Show removing code: only succeeds if done after deployCode -->
-    <target name="remove">
-      <sf:retrieve username="${sf.username}" password="${sf.password}"
-        sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}"
-        deployRoot="remove" />
     </target>
 </project>
