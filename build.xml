@@ -44,6 +44,7 @@
         </git>
         <git command="push" dir="${gt.gitDirectory}">
           <args>
+            <arg value="-f" />
             <arg value="origin" />
             <arg value="master" />
           </args>
