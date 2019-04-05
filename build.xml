@@ -42,7 +42,7 @@
             <arg value="-am ${gt.commitMessage}" />
           </args>
         </git>
-        <git command="push">
+        <git command="push -f origin master">
           <args>
             <arg value="-f origin master" />
           </args>
