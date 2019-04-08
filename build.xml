@@ -37,7 +37,7 @@
             <arg value="." />
           </args>
         </git>
-        <git command="commit" dir="./">
+        <git command="commit" dir="${gt.gitDirectory}">
           <args>
             <arg value="-am ${gt.commitMessage}" />
           </args>
