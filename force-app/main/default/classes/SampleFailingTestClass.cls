@@ -1,6 +1,5 @@
 @isTest
 public class SampleFailingTestClass {
-
     public static testmethod void failingTest() {
         Account acc = new Account(Name= 'fred');
         insert acc;
