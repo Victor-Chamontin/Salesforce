@@ -32,7 +32,6 @@
         sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}"
         unpackaged="manifest/package.xml" retrieveTarget="force-app/main/default/"/>
         <echo message="Commiting all changes with message ${gt.commitMessage}" />
-        <git command="init"/>
         <git command="add" dir="${gt.gitDirectory}">
           <args>
             <arg value="." />
@@ -43,14 +42,9 @@
             <arg value="-am ${gt.commitMessage}" />
           </args>
         </git>
-
-        <git command="branch">
-        </git>
         <git command="push">
           <args>
-            <arg value="-u" />
-            <arg value="origin" />
-            <arg value="master" />
+            <arg value="ssh://git@fr-i2ce-forge.resultinfra.com:2222/poc_salesforces.git" />
           </args>
         </git>
     </target>
