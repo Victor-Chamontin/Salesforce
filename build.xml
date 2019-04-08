@@ -32,12 +32,6 @@
         sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}"
         unpackaged="manifest/package.xml" retrieveTarget="force-app/main/default/"/>
         <echo message="Commiting all changes with message ${gt.commitMessage}" />
-        <git command="config">
-          <args>
-            <arg value="--username" />
-            <arg value="-l" />
-          </args>
-        </git>
         <git command="add" dir="${gt.gitDirectory}">
           <args>
             <arg value="." />
