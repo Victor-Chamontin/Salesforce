@@ -42,7 +42,9 @@
           <args>
             <arg value="-am ${gt.commitMessage}" />
           </args>
-        </git>        
+        </git>
+        <git command="pull" dir="./">
+        </git>          
         <git command="push">
           <args>
 
