@@ -37,24 +37,12 @@
             <arg value="." />
           </args>
         </git>
-        <git command="checkout" dir="${gt.gitDirectory}">
-          <args>
-            <arg value="master" />
-          </args>
-        </git>
+
         <git command="commit" dir="./">
           <args>
             <arg value="-am ${gt.commitMessage}" />
           </args>
-        </git>
-        <git command="remote">
-          <args>
-            <arg value="add" />
-            <arg value="origin" />
-            <arg value="ssh://git@fr-i2ce-forge.resultinfra.com:2222/poc_salesforce.git" />
-          </args>
-        </git>
-        
+        </git>        
         <git command="push">
           <args>
             <arg value="-f" />
