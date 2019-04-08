@@ -37,7 +37,7 @@
             <arg value="." />
           </args>
         </git>
-        <git command="branch" dir="${gt.gitDirectory}">
+        <git command="checkout" dir="${gt.gitDirectory}">
           <args>
             <arg value="master" />
           </args>
