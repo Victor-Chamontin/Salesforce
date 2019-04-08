@@ -44,10 +44,13 @@
           </args>
         </git>
         <git command="pull" dir="./">
+          <args>
+              <arg value="origin" />
+              <arg value="master" />
+            </args>
         </git>          
         <git command="push">
           <args>
-
             <arg value="origin" />
             <arg value="master" />
           </args>
