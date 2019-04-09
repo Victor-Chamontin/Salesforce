@@ -15,7 +15,7 @@
     </taskdef>
 
     <!-- Deploy the unpackaged set of metadata retrieved with retrieveUnpackaged and run tests -->
-    <target name="deploy">
+    <target name="deploy" depends="proxy">
       <sf:deploy username="${sf.username}" password="${sf.password}"
         sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}"
         deployRoot="force-app/main/default/" rollbackOnError="true">
