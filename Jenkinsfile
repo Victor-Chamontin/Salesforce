@@ -2,7 +2,7 @@
 import groovy.json.JsonSlurperClassic
 node {
 
-    def BUILD_NUMBER=env.BUILD_NUMBER
+    def BUILD_NUMBER=env.BUILD_NUMBER = "153"
     def RUN_ARTIFACT_DIR="tests/${BUILD_NUMBER}"
     def SFDC_USERNAME
 
