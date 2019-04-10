@@ -52,7 +52,6 @@
         </git>
         <git command="push">
           <args>
-            <arg value="-f" />
             <arg value="origin" />
             <arg value="master" />
           </args>
