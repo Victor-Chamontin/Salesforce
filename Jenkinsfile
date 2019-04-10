@@ -8,7 +8,7 @@ node {
 
     def HUB_ORG=env.HUB_ORG_DH = "victor.chamontin@curious-bear-qblr92.com"
     def SFDC_HOST = env.SFDC_HOST_DH = "https://login.salesforce.com"
-    def JWT_KEY_CRED_ID = env.JWT_CRED_ID_DH = "POC_SALESFORCE_SFDX"
+    def JWT_KEY_CRED_ID = env.JWT_CRED_ID_DH = "3a501f10-c5be-4d7f-b02f-bc8aab9cc37c"
     def CONNECTED_APP_CONSUMER_KEY=env.CONNECTED_APP_CONSUMER_KEY_DH = "3MVG9T46ZAw5GTfUKCVM0gXH_ufDXkZgqqiM81SOsuVGH8HGEOjkMTOHvdGYrEs6Vhs.MkPmf16Ie2hPZilCE"
 
     def toolbelt = tool 'sfdx'
@@ -18,7 +18,7 @@ node {
         checkout scm
     }
 
-    withCredentials([file(credentialsId: JWT_KEY_CRED_ID, variable: 'POC_SALESFORCE_SFDX')]) {
+    withCredentials([file(credentialsId: JWT_KEY_CRED_ID, variable: 'jwt_key_file')]) {
         stage('Create Scratch Org') {
 
             rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile ${jwt_key_file} --setdefaultdevhubusername --instanceurl ${SFDC_HOST}"
