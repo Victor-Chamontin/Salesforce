@@ -6,6 +6,8 @@ node {
     def RUN_ARTIFACT_DIR="tests/${BUILD_NUMBER}"
     def SFDC_USERNAME
 
+    def SOURCE_DEPLOY = "../force-app/main/default/"
+
     def HUB_ORG="victor.chamontin@curious-bear-qblr92.com"
     def SFDC_HOST ="https://login.salesforce.com"
     def JWT_KEY_CRED_ID = "3a501f10-c5be-4d7f-b02f-bc8aab9cc37c"
@@ -51,7 +53,7 @@ node {
         }*/
 
         stage('Push To Test Org') {
-            rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:source:push --targetusername ${HUB_ORG}"
+            rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:source:deploy --sourcepath ${SOURCE_DEPLOY} --json --loglevel -fatal"
             if (rc != 0) {
                 error 'push failed'
             }
