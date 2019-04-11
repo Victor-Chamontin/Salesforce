@@ -35,7 +35,7 @@ node {
         }*/
 
         stage('Push To Test Org') {
-            rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:mdapi:deploy --deploydir mdapi_output_dir --targetusername ${HUB_ORG}"
+            rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:mdapi:deploy --targetusername ${HUB_ORG}"
             if (rc != 0) {
                 error 'push failed'
             }
