@@ -35,7 +35,7 @@ node {
         }*/
 
         stage('Push To Test Org') {
-            rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:mdapi:deploy --targetusername ${HUB_ORG}"
+            rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:mdapi:deploy -d manifest/. --targetusername ${HUB_ORG}"
             if (rc != 0) {
                 error 'push failed'
             }
@@ -46,7 +46,7 @@ node {
             }*/
         }
 
-        stage('Run Apex Test') {
+        /*stage('Run Apex Test') {
             sh "mkdir -p ${RUN_ARTIFACT_DIR}"
             timeout(time: 120, unit: 'SECONDS') {
                 rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:apex:test:run --testlevel RunLocalTests --outputdir ${RUN_ARTIFACT_DIR} --resultformat tap --targetusername ${SFDC_USERNAME}"
@@ -54,7 +54,7 @@ node {
                     error 'apex test run failed'
                 }
             }
-        }
+        }*/
 
     }
 }
