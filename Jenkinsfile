@@ -51,15 +51,15 @@ node {
         }*/
 
         stage('Push To Test Org') {
-            rc = sh returnStatus: true, script: "${toolbelt}/force:mdapi:deploy -d manifest/package.xml -u ${HUB_ORG}"
+            rc = sh returnStatus: true, script: "${toolbelt}/force:mdapi:deploy -d manifest/. -u ${HUB_ORG}"
             if (rc != 0) {
                 error 'push failed'
             }
             // assign permset
-            rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:user:permset:assign --targetusername ${HUB_ORG} --permsetname DreamHouse"
+            /*rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:user:permset:assign --targetusername ${HUB_ORG} --permsetname DreamHouse"
             if (rc != 0) {
                 error 'permset:assign failed'
-            }
+            }*/
         }
         /*
 
