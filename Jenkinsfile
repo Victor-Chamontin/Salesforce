@@ -6,8 +6,6 @@ node {
     def RUN_ARTIFACT_DIR="tests/${BUILD_NUMBER}"
     def SFDC_USERNAME
 
-    def SOURCE_DEPLOY = "../force-app/main/default/"
-
     def HUB_ORG="victor.chamontin@curious-bear-qblr92.com"
     def SFDC_HOST ="https://login.salesforce.com"
     def JWT_KEY_CRED_ID = "3a501f10-c5be-4d7f-b02f-bc8aab9cc37c"
@@ -53,7 +51,7 @@ node {
         }*/
 
         stage('Push To Test Org') {
-            rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:source:deploy --sourcepath ${SOURCE_DEPLOY} --json --loglevel -fatal"
+            rc = sh returnStatus: true, script: "${toolbelt}/force:mdapi:deploy -d manifest/. -u ${HUB_ORG}"
             if (rc != 0) {
                 error 'push failed'
             }
@@ -63,8 +61,9 @@ node {
                 error 'permset:assign failed'
             }
         }
+        /*
 
-        /*stage('Run Apex Test') {
+        stage('Run Apex Test') {
             sh "mkdir -p ${RUN_ARTIFACT_DIR}"
             timeout(time: 120, unit: 'SECONDS') {
                 rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:apex:test:run --testlevel RunLocalTests --outputdir ${RUN_ARTIFACT_DIR} --resultformat tap --targetusername ${SFDC_USERNAME}"
