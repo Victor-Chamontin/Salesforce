@@ -1,3 +1,3 @@
-trigger TestVSCode on SOBJECT (before insert) {
+trigger TestVSCode on Account (before insert) {
 
 }
