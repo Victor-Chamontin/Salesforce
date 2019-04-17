@@ -36,6 +36,18 @@ node {
             */
         }
 
+        stage('Retrieve To Test Org') {
+            rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:source:retrieve -p force-app/main/default/. --targetusername ${HUB_ORG}"
+            if (rc != 0) {
+                error 'push failed'
+            }
+            // assign permset
+            /*rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:user:permset:assign --targetusername ${HUB_ORG} --permsetname DreamHouse"
+            if (rc != 0) {
+                error 'permset:assign failed'
+            }*/
+        }
+
         stage('Push To Test Org') {
             rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:source:deploy -p force-app/main/default/. --targetusername ${HUB_ORG}"
             if (rc != 0) {
