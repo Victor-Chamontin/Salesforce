@@ -58,5 +58,9 @@ node {
             }
         }*/
 
+        //stage('collect results') {
+        //    junit keepLongStdio: true, testResults: 
+        //}
+
     }
 }
