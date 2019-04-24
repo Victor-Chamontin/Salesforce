@@ -28,6 +28,10 @@ node {
             rmsg = sh returnStdout: true, script: "${toolbelt}/sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername"
             println rmsg
             /*
+            // jsonSlurper wich pases text or reader content into a data structure of lists and maps
+            // It's from this place that I'm trying to get the Scratch Org id back.
+            // Without this piece of code, everything that is later commented on does not work.
+            
             def jsonSlurper = new JsonSlurperClassic()
             def robj = jsonSlurper.parseText(rmsg)
             if (robj.status != 0) { error 'org creation failed: ' + robj.message }
