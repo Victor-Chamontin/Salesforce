@@ -27,7 +27,7 @@ node {
             // need to pull out assigned username
             rmsg = sh returnStdout: true, script: "${toolbelt}/sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername"
             println rmsg
-            /*
+            
             // jsonSlurper wich pases text or reader content into a data structure of lists and maps
             // It's from this place that I'm trying to get the Scratch Org id back.
             // Without this piece of code, everything that is later commented on does not work.
@@ -37,7 +37,7 @@ node {
             if (robj.status != 0) { error 'org creation failed: ' + robj.message }
             SFDC_USERNAME=robj.result.username
             robj = null
-            */
+            
         }
 
         stage('Push To Test Org') {
@@ -46,13 +46,13 @@ node {
                 error 'push failed'
             }
             // assign permset
-            /*rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:user:permset:assign --targetusername ${HUB_ORG} --permsetname DreamHouse"
+            rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:user:permset:assign --targetusername ${HUB_ORG} --permsetname DreamHouse"
             if (rc != 0) {
                 error 'permset:assign failed'
-            }*/
+            }
         }
 
-        /*stage('Run Apex Test') {
+        stage('Run Apex Test') {
             sh "mkdir -p ${RUN_ARTIFACT_DIR}"
             timeout(time: 120, unit: 'SECONDS') {
                 rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:apex:test:run --testlevel RunLocalTests --outputdir ${RUN_ARTIFACT_DIR} --resultformat tap --targetusername ${SFDC_USERNAME}"
@@ -60,7 +60,7 @@ node {
                     error 'apex test run failed'
                 }
             }
-        }*/
+        }
 
         //stage('collect results') {
         //    junit keepLongStdio: true, testResults: 
