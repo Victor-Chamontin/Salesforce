@@ -41,12 +41,13 @@ node {
         }
 
         stage('Push To Test Org') {
-            rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:source:deploy -p force-app/main/default/. --targetusername ${HUB_ORG}"
+            //rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:source:deploy -p force-app/main/default/. --targetusername ${HUB_ORG}"
+			rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:source:push --targetusername ${SFDC_USERNAME}"
             if (rc != 0) {
                 error 'push failed'
             }
             // assign permset
-            rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:user:permset:assign --targetusername ${HUB_ORG} --permsetname DreamHouse"
+            rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:user:permset:assign --targetusername ${SFDC_USERNAME} --permsetname DreamHouse"
             if (rc != 0) {
                 error 'permset:assign failed'
             }
@@ -62,9 +63,9 @@ node {
             }
         }
 
-        //stage('collect results') {
-        //    junit keepLongStdio: true, testResults: 
-        //}
+        stage('collect results') {
+            junit keepLongStdio: true, testResults: 'tests/**/*-junit.xml'
+        }
 
     }
 }
