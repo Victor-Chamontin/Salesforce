@@ -25,7 +25,7 @@ node {
         // Pipeline for push to SandBox
         stage('Push to SandBox') {
 
-            rc = sh returnStatus: true, script: "${toolblet}/sfdx force:source:deploy -x /manifest/package.xml --username ${HUB_ORG}"
+            rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:source:deploy -x /manifest/package.xml --username ${HUB_ORG}"
             
             // Script with a nonzero status code wull cause the step to fail with an exception
             if(rc != 0) {
