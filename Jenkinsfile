@@ -49,7 +49,7 @@ node {
 
         /* -------------------------------------------------------------- Test on Scratch Org ------------------------------------------- */
 
-        /*
+        
         // Pipeline for create a Scratch Org and retrieve the id of it
         stage('Create Scratch Org') {
 
@@ -70,6 +70,7 @@ node {
             robj = null
             
         }
+        /*
 
         // Pipeline for push to the Scratch Org
         stage('Push To Test Org') {
