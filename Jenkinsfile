@@ -38,7 +38,13 @@ node {
         stage('Run Apex Code') {
             sh "mkdir -p ${RUN_ARTIFACT_DIR}"
             timeout(time: 120, unit: 'SECONDS') {
-                rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:apex:test:run --outputdir ${RUN_ARTIFACT_DIR}  --targetusername ${HUB_ORG}"
+                /*
+                 * Script to run Apex tests
+                 * --testlevel RunLocalTests : All tests in your org are run, except the ones that originate from installed managed packages
+                 * --resultformat tap : Fromat to use when displaying results. If you also specify the --json flag, --json overrides this parameter
+                 * Permissible values are : human, tap, junit, json
+                 */
+                rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:apex:test:run --testlevel RunLocalTests --outputdir ${RUN_ARTIFACT_DIR}  --targetusername ${HUB_ORG}"
 
                 // Script with a nonzero status code wull cause the step to fail with an exception
                 if (rc != 0) {
