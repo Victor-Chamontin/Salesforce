@@ -50,7 +50,7 @@ node {
                  * With --resultformat I have a problem : I have to create a sratch org beforehand to set this parameter
                  * If i don't put it on, I have a mistake on the secret file...
                  */
-                rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:apex:test:run --testlevel RunLocalTests --outputdir ${RUN_ARTIFACT_DIR} --resultformat human --targetusername ${HUB_ORG} --verbose"
+                rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:apex:test:run --testlevel RunLocalTests --outputdir ${RUN_ARTIFACT_DIR} --resultformat human --targetusername ${HUB_ORG}"
 
                 // Script with a nonzero status code wull cause the step to fail with an exception
                 if (rc != 0) {
@@ -58,6 +58,7 @@ node {
                 }
             }
         }
+        
 
         /* -------------------------------------------------------------- Test on Scratch Org ------------------------------------------- */
 
