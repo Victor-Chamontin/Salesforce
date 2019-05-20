@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>victor.chamontin@curious-bear-qblr92.com</contactEmail>
+    <label>JenkinsApp</label>
+    <oauthConfig>
+        <callbackUrl>http://localhost:1919/OauthRedirect</callbackUrl>
+        <certificate>MIIDoDCCAogCCQD5air8v2DUnTANBgkqhkiG9w0BAQsFADCBkTELMAkGA1UEBhMCRlIxDzANBgNVBAgTBkZyYW5jZTERMA8GA1UEBxMIVG91bG91c2UxDDAKBgNVBAoTA0NHSTESMBAGA1UECxMJRGV2ZWxvcGVyMRMwEQYDVQQDEwpTYWxlc2ZvcmNlMScwJQYJKoZIhvcNAQkBFhh2aWN0b3IuY2hhbW9udGluQGNnaS5jb20wHhcNMTkwMzI5MTMxNzUwWhcNMjAwMzI4MTMxNzUwWjCBkTELMAkGA1UEBhMCRlIxDzANBgNVBAgTBkZyYW5jZTERMA8GA1UEBxMIVG91bG91c2UxDDAKBgNVBAoTA0NHSTESMBAGA1UECxMJRGV2ZWxvcGVyMRMwEQYDVQQDEwpTYWxlc2ZvcmNlMScwJQYJKoZIhvcNAQkBFhh2aWN0b3IuY2hhbW9udGluQGNnaS5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCwXr6OUOvrymmZn8uOHikmArqvUbhyu4sFY9puAQUuxOctTsx8vs6gqnnDpiwGabfpfWF1e7UNWQvtJOzakkSCqqX8SvIC/pBavkK0+0/iWtdXiSsRewzIiMgCf89iHpd/gRvfnlJZXK3PyEZH/paqZiKCuHitm2YW6pO9D1dH1WpnP0+pq4hChFmkViBWxvX7xOfCL0zjWW9YHOxM2UoKRQ2O+b7OhqejccEUAMfn2IMOpYuQDRjluuKSpJclHePPC3ssjc97pjpm0Zpn7CBrqD/fJ0+U2wfZ3MamQgSXdP58lYwJIdSUdeKMQna04smfEmWL6XcU4Np7HbxQWa1dAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAChCJ0A8qRVIdaNKgpiPugtbYm3w0LybAaeTLcVOvZtuqEPsozSUcMqBs7gi+CRrpogaOnCivriARNc0PSQTPcMfCK8i5IRR+aSTrbixK21p03xImCESwqGGFyCwjaOMkaLBQksDbTG/z1ty1RzWZTUWDQDmUGESZLBexqlbQu92Y8VJloQw89uOjnVDfk6yxGgafq4zSquWD+pO4NOphqiRL3y5i/vxYTyUVtB9ubKLwzrSJSUPnR3uKetPhGVKpFCHnF+OQr3mTv8CRTCIDjhHbNSuTgwyn3/7m50Ew4n7xJnWCAbisMNZjbP14rPJGrKYo9NL8dB6+ruBx25MGo0=</certificate>
+        <consumerKey>3MVG9T46ZAw5GTfUKCVM0gXH_ufDXkZgqqiM81SOsuVGH8HGEOjkMTOHvdGYrEs6Vhs.MkPmf16Ie2hPZilCE</consumerKey>
+        <scopes>Basic</scopes>
+        <scopes>Api</scopes>
+        <scopes>Web</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+</ConnectedApp>
